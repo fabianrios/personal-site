@@ -1,0 +1,36 @@
+<h1>Listing projects</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Fecha</th>
+    <th>Image</th>
+    <th>Link url</th>
+    <th>Commercial</th>
+    <th>Label</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr>
+    <td><%= project.name %></td>
+    <td><%= project.description %></td>
+    <td><%= project.fecha %></td>
+    <!-- <td><%= project.image %></td> -->
+    <td><%= image_tag(project.image, :class => 'images', :alt => project.name ) %></td>
+    <td><%= project.link_url %></td>
+    <td><%= project.commercial %></td>
+    <td><%= project.label %></td>
+    <td><%= link_to 'Show', project %></td>
+    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Project', new_project_path %>

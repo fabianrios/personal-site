@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  fecha: 2013-01-25 21:44:50
+  image: MyString
+  link_url: MyString
+  commercial: false
+  label: MyString
+
+two:
+  name: MyString
+  description: MyText
+  fecha: 2013-01-25 21:44:50
+  image: MyString
+  link_url: MyString
+  commercial: false
+  label: MyString
