@@ -7,8 +7,47 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container white-gradient2"><!-- menu principal -->
+		<div class="row">
+			<div class="four columns offset-by-eight date">
+				<!-- fecha -->
+				<%=   Time.now.strftime("%d/%m/%Y") %>
+				<%= Time.now.strftime("son las: %I:%M%p")    %>
+			<!-- END fecha -->
+			</div>
+		</div>
+		<div class="row">
+			<div class="six columns">
+				<div class="row">
+					<div class="three columns">
+						<h1 class="logo">Fabián Ríos</h1>
+					</div>
+					<div class="nine columns">
+						<h4 class="main">Web Design & Development </h4>
+					</div>
+				</div>
+			</div>
+			<div class="six columns">
+				<ul class="nav-bar">
+					<li class="active"><a href="/" class="main"><span aria-hidden="true" data-icon="&#xe000;"></span></a></li>
+					<li><a href="#" data-reveal-id="contacto" class="main">Contact <span aria-hidden="true" data-icon="&#xe017;"></span></a></li>
+					<li><a href="http://fabianrios.co/blog" class="main"> Blog <span aria-hidden="true" data-icon="&#xe00e;"></span></a></li>
+					<li class="hide-on-tablets"><a href="https://twitter.com/FabianRios" class="main" target="_blank"><span aria-hidden="true" data-icon="&#xe072;"></span> </a></li>
+				</ul>	
+			</div>
+		</div> 
+	</div>
+	
+	<hr class="primero">
+	
+	
+	<div class="row">
+		<div class="twelve columns">
+			<%= yield %>
+		</div>
+	</div>
+	
 
-<%= yield %>
 
 </body>
 </html>

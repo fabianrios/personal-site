@@ -1,4 +1,4 @@
-<%= form_for(@project) do |f| %>
+<%= form_for(@project, :html => { :class => "nice"}) do |f| %>
   <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class => 'input-text medium' %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_area :description, :rows => 6 %>
+    <%= f.text_area :description, :rows => 6, :class => 'input-text' %>
   </div>
   <div class="field">
     <%= f.label :fecha %><br />
@@ -25,11 +25,11 @@
   </div>
   <div class="field">
     <%= f.label :image %><br />
-    <%= f.text_field :image %>
+    <%= f.text_field :image, :class => 'input-text' %>
   </div>
   <div class="field">
     <%= f.label :link_url %><br />
-    <%= f.text_field :link_url %>
+    <%= f.text_field :link_url, :class => 'input-text' %>
   </div>
   <div class="field">
     <%= f.label :commercial %><br />
