@@ -1,0 +1,42 @@
+
+
+<% if notice %>
+<p id="notice" ><%= notice %></p>
+<% end %>
+<ul class="block-grid three-up mobile isotope" id="cont">
+	<% @projects.each do |project| %>
+	<!-- variable de etiquetas -->
+	
+	
+	<li class="html5 css3 jquery nocomercial isotope-item">
+		
+		<div class="stack">
+			<%= link_to image_tag("link.png", :border => 0, :class => 'mas'), project %>
+			<%= image_tag(project.image, :class => 'images', :alt => project.name ) %>
+		</div>
+		<div class="likes">
+			<a href="#" aria-hidden="true"  data-icon="&#xe04b;" class="bt"></a> <span><%= project.likes.likes %></span>
+			<a href="#" aria-hidden="true"  data-icon="&#xe040;" class="bt"></a><span> <%= project.likes.views %></span>
+		</div>
+		
+		<div class="info"><!-- info -->
+			<p class="text-left links"><strong><a href="<%= project.link_url %>" target="_blank"><%= project.name %> <span aria-hidden="true" data-icon="&#xe06a;"></span></a> </strong></p>
+			<span aria-hidden="true" class="right benefit" data-icon="<%=sanitize project.commercial ? '&#xe014;' : '&#xe049;' %>"></span>
+			<span class="label round gray"><%= project.label %> </span>
+		</div>
+
+		<div class="info-plus">
+			<p><%=sanitize project.description %><%= link_to raw("<span aria-hidden='true' data-icon='&#xe069;'></span>"), project %></p>
+			<dl class="sub-nav" id="filters">
+				<% @labels = project.tags.tag_label.gsub(/\s+/, "").split(",") %>
+				<% @labels.each do |tag| %>
+						<dd><a href="#" data-filter=".<%= tag %>"><span class="label radius white"><%=tag%></span> </a></dd>
+				<% end %>
+			</dl>
+		</div>
+		
+	</li>
+	<% end %>
+</ul>
+
+
